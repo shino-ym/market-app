@@ -13,14 +13,15 @@
 2.DockerDesktopアプリを立ち上げる\
 3.`docker-compose up -d --build`
 
+>アクセスした場合に権限エラーが発生した場合はコマンドライン上で以下を実行\
+`sudo chmod -R 777 src/*`
+
 **Laravel環境構築**\
 1. PHPコンテナ内に入る\
 `docker-compose exec php bash`
-2. 依存パッケージをインストール\
-`composer install`
-3. .env.exampleをコピーして.envを作る\
+2. .env.exampleをコピーして.envを作る\
 `cp .env.example .env`
-4. vscode「.env」に以下の環境変数を追加
+3. vscode「.env」に以下の環境変数を追加
 ```
 DB_CONNECTION=mysql
 DB_HOST=mysql
@@ -29,6 +30,8 @@ DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
+4. 依存パッケージをインストール\
+`composer install`
 5. アプリケーションキーの作成\
 `php artisan key:generate`
 6. マイグレーションの実行\
@@ -37,10 +40,6 @@ DB_PASSWORD=laravel_pass
 `php artisan storage:link`
 8. シーディングの実行\
 `php artisan db:seed`
-
->アクセスした場合に権限エラーが発生した場合はコマンドライン上で以下を実行\
-`sudo chmod -R 777 src/*`
-
 
 ## Fortify設定
 1. PHPコンテナ内に入る\
