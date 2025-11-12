@@ -1,0 +1,27 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+
+# Docker MySQLデータを除外
+/docker/mysql/data/
+
+# storage 以下は基本無視
+/storage/*
+
+# ただし追跡したいディレクトリとその中身
+!/storage/app/
+!/storage/app/public/
+!/storage/app/public/images/
+!/storage/app/public/images/**
